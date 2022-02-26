@@ -1,0 +1,354 @@
+\documentclass[a4paper,10pt,twoside,openright]{memoir}
+\usepackage{multicol, multirow, array}
+\usepackage{fontspec}
+\usepackage{anyfontsize}
+\usepackage[pagecolor=none,dvipsnames]{xcolor}
+\usepackage{ragged2e}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[hidelinks]{hyperref}
+\usepackage{url}
+\usepackage[margin=0.8in]{geometry}
+\usepackage{float, hhline}
+\usepackage{booktabs}
+\usepackage{textcomp}
+\usepackage{expex}
+\usepackage{enumitem}
+\usepackage{paracol}
+\usepackage[calc,english]{datetime2}
+\usepackage{suffix}
+\usepackage{afterpage}
+\usepackage{phonrule}
+\usepackage{xeCJK}
+
+%-----CONFIGURATION------
+%------------------------
+
+\setmainfont{Charis SIL}
+% \setCJKmainfont[BoldFont=NotoSansCJKjp-Bold,AutoFakeSlant=0.15]{Noto Sans CJK JP}
+% \setCJKsansfont[BoldFont=NotoSansCJKjp-Bold,AutoFakeSlant=0.15]{Noto Sans CJK JP}
+\restylefloat{table}
+
+\setsecnumdepth{subsubsection}
+\settocdepth{subsubsection}
+
+\definelingstyle{default}{glstyle=nlevel,numoffset=3em,textoffset=1.5em,exskip=.75ex,belowglpreambleskip=.25ex,aboveglftskip=.25ex,everyglft=\it}
+\definelingstyle{Conversation}{aboveexskip=0pt,belowexskip=0pt,belowglpreambleskip=.5ex,aboveglftskip=0pt,glwordalign=left,glftpos=right,glhangstyle=none,
+glrightskip=0pt plus .3\hsize,% added to avoid overfull glosses
+glneveryline={\it\addfontfeatures{Letters=UppercaseSmallCaps}},%
+ssratio=.5,% width of the left panel of the glwidth
+everyglft={},%
+}
+
+\lingset{lingstyle=default}
+
+\DTMnewdatestyle{eurodate}{%
+    \renewcommand{\DTMdisplaydate}[4]{%
+        \number##3.\nobreakspace%           day
+        \DTMmonthname{##2}\nobreakspace%    month
+        \number##1%                         year
+    }%
+    \renewcommand{\DTMDisplaydate}{\DTMdisplaydate}%
+}
+
+\DTMsetdatestyle{eurodate}
+
+\renewcommand{\arraystretch}{1.4}
+
+%-----description command---%
+%---------------------------%
+
+\SetLabelAlign{parrightcent}{\strut\smash{\parbox[c]{\labelwidth}{\raggedleft#1}}}
+\SetLabelAlign{parright}{\strut\smash{\parbox[t]{\labelwidth}{\raggedleft#1}}}
+
+%-------COMMANDS---------
+%------------------------
+
+\newcommand{\lang}{{\bigglot}a{\bigglot}a-\textsc{f}a\textsc{m}}
+\newcommand{\longv}{ː}
+\newcommand{\sqbrack}[1]{$\langle$#1$\rangle$}
+\newcommand{\phipa}[1]{/#1/}
+\newcommand{\bripa}[1]{[#1]}
+\newcommand{\ttilde}{\raise.17ex\hbox{$\scriptstyle\sim$}}
+\newcommand{\rootpart}{$\Theta$}
+\newcommand{\glotstop}{ʔ}
+\newcommand{\bigglot}{Ɂ}
+\newcommand{\lilglot}{ɂ}
+\newcommand{\nm}{\symbol{"2205}}
+\newcommand{\tiebar}{͡}
+\newcommand{\famwordold}[5]{#1\textsc{#2}#3\textsc{#4}#5}
+\newcommand\famword[1]{{\addfontfeatures{Letters=UppercaseSmallCaps}#1}}
+\newcommand{\famq}[1]{»#1«}
+
+%----QoL COMMAND-------
+%----------------------
+
+\newcounter{numbertable}
+
+\newcommand{\wtf}[1]{\thenumbertable. & #1 \\\refstepcounter{numbertable} }
+
+%\newcommand{numbertablerow}[1]{%
+%    \refstepcounter{numbertable}
+%    \thenumbertable. & #1 }
+
+%-----DICT COMMANDS------
+%------------------------
+
+\makeatletter
+\@beginparpenalty=10000
+\makeatother
+
+\newcounter{dictwordcount}
+\newcounter{definition}
+
+\newenvironment{dictroot}[2]%
+    {%
+    \subsection{\uppercase{#1---#2}}
+    \begin{description}[leftmargin=*,labelwidth=*]
+    }{%
+    \end{description}
+    }%
+
+\newcommand{\dictsubtitle}[1]{%
+    \end{description}
+    \subsubsection*{#1}
+    \begin{description}[leftmargin=*,labelwidth=*]
+}%
+
+\makeatletter
+\newenvironment{dictentry}[2]%
+    {%
+    \item[\famword{#1}] $\bullet$ \textit{#2}\hfill
+    \protected@edef\@currentlabelname{#1}%
+    \setcounter{definition}{0}%
+    \refstepcounter{dictwordcount}%
+    \begin{description}[align=right,labelwidth=*,font=\normalfont]
+    }{%
+    \end{description}
+    }%
+\makeatother
+
+\newcommand{\dictdef}[1]{\refstepcounter{definition}%
+\item[\thedefinition.] #1
+}%
+
+\WithSuffix\newcommand\dictdef*[1]{%
+    \item[] #1
+}
+
+\newcommand{\newentry}[2]{%
+\item[#1] $\bullet$ \textit{#2}\hfill
+}%
+
+%-------TITLE PAGE-------
+%------------------------
+
+\title{{\fontsize{100}{100}\selectfont \lang} \\ \Huge \sffamily A Reference Grammar of the Narish Language}
+\author{Bethany E. Toma, Kim U. Korsæth}
+\date{\today}
+
+%--------MAIN DOC--------
+%------------------------
+
+\begin{document}
+
+\pagecolor{Melon}
+\maketitle
+\pagecolor{white}
+
+\frontmatter
+
+\chapter{Foreword}
+
+\lang{} is a constructed language spoken on the fictitious Nareland island.
+
+\newpage
+
+\tableofcontents
+
+\mainmatter
+
+\chapter{Phonology}
+\section{Consonants}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{rcccccc}
+    \toprule
+            & Labial & Alveolar & Palatal & Velar & Uvular & Glottal \\
+    \midrule
+    Fortis & pʰ \ttilde{} p\tiebar ɸ & tʰ \ttilde{} t\tiebar s &
+    % \multirow{2}{*}{c \ttilde{} c\tiebar ç} & \multirow{2}{*}{k \ttilde{} k\tiebar x} & \multirow{2}{*}{q \ttilde{} q\tiebar χ} & \multirow{2}{*}{ʔ} \\
+    c \ttilde{} c\tiebar ç & k \ttilde{} k\tiebar x & q \ttilde{} q\tiebar χ & \multirow{2}{*}{ʔ} \\
+     Lenis & p \ttilde{} b & t \ttilde{} d & & & & \\
+    Fricative & f & s & \multicolumn{4}{c}{ç \enspace \ttilde{} \enspace x \enspace \ttilde{} \enspace χ \enspace \ttilde{} \enspace ħ \enspace \ttilde{} \enspace h} \\
+    Approximant & & l & j & w & & \\
+    Nasal & m & n & & & & \\
+    Rhotic & & \multicolumn{2}{c}{ɾ \enspace \ttilde{} \enspace ɹ \enspace \ttilde{} \enspace ɻ } & & & \\
+    \bottomrule
+    \end{tabular}
+    \caption{Phonemic Consonant Inventory}
+    \label{tab:consinv}
+\end{table}
+
+\section{Vowels}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{rccc}
+    \toprule
+          & Front & Central & Back \\
+    \midrule
+    Close & i (i\longv{}) & & u (u\longv) \\
+    Mid   & & ə & \\
+    Open  & & a (a\longv) & \\
+    \bottomrule
+    \end{tabular}
+    \caption{Phonemic Vowel Inventory}
+    \label{tab:vowelinv}
+\end{table}
+
+\section{Phonotactics \& Allophony}
+
+Syllables always contain a vowel nucleus, with rarely more than two onset consonants and two coda consonants. Sonority hierarchy plays a big role in the structure of syllables and their realization.
+
+\subsection{Sonority Hierarchy}
+\subsection{High vowel lowering}
+
+The high vowels /i i\longv{} u u\longv/ are lowered to [e e\longv{} o o\longv{}] before /j w/ respectively.
+
+\subsection{Epenthetic schwa}
+
+The epenthetic schwa appears within consonant sequences that, without adjacent vowels, violate syllable structure and may not be realized. It occurs in the earliest non-initial position possible that provides legal consonant sequences. This schwa is never stressed. For example, the word \famword{NurRKi} is phonemically /ˈnurrkʰi/, but \lang{} does not allow duplicate continuant phonemes, leaving the second /r/ out of the first syllable. The following syllable would not be able to accommodate it either, as it would violate the sonority rules by placing a less sonorous phoneme between two more sonorous ones. Of the two positions for the epenthetic schwa within this sequence, [ˈnuɾəɾkʰi] and [ˈnuɾɾəkʰi], only the former solution accommodates both restrictions and yields a legal realization.
+
+\begin{table}[ht]
+    \begin{tabular}{lll}
+        \textit{Example}    & \textit{Phonemic transcription}   & \textit{Phonetic Realization} \\
+        \famword{NurRKi}    & /ˈnurrkʰi/                        & [ˈnuɾəɾkʰi] \\
+        \famword{mBiT}      & /ˈmpitʰ/                          & [məˈbitʰ] \\
+        \famword{inNiM}     & /inˈnim/                          & [inəˈnim] \\
+        \famword{SaFR}      & /ˈsafr/                           & [ˈsafər] 
+    \end{tabular}
+\end{table}
+
+Word-onset sequences may never be disambiguated by prefixing an epenthetic schwa to the word. Like in medial and coda sequences, the epenthetic schwa must occur interconsonantally, but not across word boundaries. In the sequence |...C$_a$\#C$_x$C$_y$V...|, where C$_a$ is a consonant in the preceding word and C$_x$C$_y$ is an illegal sequence, the epenthetic schwa may not attempt to separate C$_a$ and C$_x$ in any way, and must instead separate C$_x$ and C$_y$. Word boundaries are inherently segmenting and preclude other segmenting elements like the epenthetic schwa. However, compound words are considered to be one phonological word, and in lacking a word boundary must make use of the epenthetic schwa.
+
+\section{Prosody}
+
+Stress, in the form of elevated pitch and volume, is placed on the first non-schwa vowel of the word, after the first root radical, on a long vowel immediately preceding the first radical, or on certain morphemes that carry stress.
+
+\begin{table}[ht]
+    %\centering
+    \begin{tabular}{lll}
+        nemiwi & [nəˈmiwi] & first non-schwa vowel of word\\
+        parse & [ˈparsə] & first non-schwa vowel of word\\
+        \famword{iFaaM} & [iˈfa{\longv}m] & vowel after first radical\\
+        \famword{FanaS} & [ˈfanas] & vowel after first radical\\
+        \famword{aaNiW}& [ˈa{\longv}niw] & long vowel preceding radical\\
+        \famword{iLaaSak} & [iˌla{\longv}ˈsak] & presence of stress-carrying morpheme (imperative affix \emph{-ak})
+    \end{tabular}
+\end{table}
+
+
+\section{Morphophonology}
+
+\section{Orthography}
+\subsection{Formal writing style}
+
+The formal writing conventions make use of small-caps letterforms to highlight roots. In addition, it uses the glottal stop character to indicate the glottal stop phoneme, using the capital glottal stop character \sqbrack{\bigglot} when the glottal stop is part of a root radical (for instance, in the word \textit{\bigglot a\bigglot a}) and the lowercase glottal stop character \sqbrack{\lilglot} otherwise (such as in the suffix \textit{-(e)}\lilglot).
+
+\subsection{Informal writing style}
+
+The informal writing conventions, also known as ``texting script", is the orthography used in the majority of day-to-day communication. Rather than using small-caps letterforms, it uses true capital letters for roots. It also uses \sqbrack{7} for the glottal stop, with no difference between capital and lowercase. While these differences could be considered less aesthetically pleasing, they result in an ASCII-compatible script, which makes this writing style far easier to use in most messaging apps and computer interfaces. Texting-style \lang{} also allows for several shorthand abbreviations that tend not to be used in more formal style.
+
+\chapter{Word formation}
+% Use the word formation section to describe 
+% roots and patterns, then in each part of 
+% speech chapter simply list the patterns and 
+% what they do
+\section{Roots}
+
+The majority of lexical items are produced by applying morphological operation belonging to their respective morphological categories to abstract roots. These roots take the form of two \emph{radicals,} where each radical constitutes a non-zero number of consonants. 
+
+There are several fossilized derivations within the roots whose meanings have been lost, and as such form discrete roots altogether. Compare \famword{L-S} \emph{`travel by foot'} and \famword{PL-S} \emph{`travel, habitation'}, or \famword{N-W} \emph{`death, murder'} and \famword{N-WK} \emph{`sacrifice, martyrdom'}.
+
+\section{Primary derivation}
+
+Primary derivation refers to the non-concatenative morphology of stems. These operations are for the most part not productive, and not all roots have a corresponding stem in each of these patterns. They may not stack, i.e. a stem may only be inflected by one pattern at a time.
+
+\section{Secondary derivation}
+
+Secondary derivation refers to the exclusively suffixing operations that may be applied to stems in addition to primary derivation. Unlike primary derivation, these suffixes bay be stacked freely.
+
+\chapter{Verbs}
+
+\section{Verbal primary derivation}
+\section{Verbal secondary derivation}
+
+\chapter{Nominals}
+
+Nouns in \lang{}, in contrast with verbs, are not inflected or even encoded for many grammatical features. Not even number is marked morphologically, instead all mentions of quantity are expressed periphrastically with adjectives. Social gender is optionally marked on nouns with a human referent using suffixes, and obligatorily marked on given names using a set of name determiners.
+
+\section{Nominal primary derivation}
+\section{Nominal secondary derivation}
+\subsection{Gender}
+Certain nouns may be inflected to convey the social gender of its referent. In phatic expressions (\emph{-ara} phrases), gender marking is obligatory.
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{>{\em}ll}
+    -un, -en, -um, -ine & Feminine gender \\
+    -aj, -aa, -iy, -a & Masculine gender \\
+    -uj, -aw & Explicitly non-binary \\
+    -an, -en (-\null) & Gender-neutral, agender \\
+    \end{tabular}
+    \caption{Common gender markers}
+\end{table}
+
+Unlike in many European languages where the linguistic term 'gender' refers to noun classes with some distinction aligned with the traditional binary gender distinction of male/female, the gender marking in \lang{} traditionally forms part of the gender expression of the individual in question, and is not assigned based on anything other than the individual's own feelings. It is entirely optional, but may be included for disambiguation or explicit declarations of gender identity. The table above contains only the four most commonly used categories of gender markers, and only a few variations taken from various lects.
+
+When a noun is marked for gender, it is assumed that the speaker has prior knowledge about which marker to use for the referrent, and knows that the distinction is either desired or necessary in the context it is used in. This usually happens once on the first mention of a referrent, after which speakers may forego gender marking for the rest of the conversation. Some find it desirable to be referred to using their chosen gender marker on any mention of themselves, which usually happens in situations where their gender is significant to the context, but may also be requested for all mentions regardless of necessity.
+
+While Nareland has traditionally had comparatively unbound and self-determinative concepts of gender identity and expression, they have been subjected to external pressures to conform to the gender binary practiced in the rest of Europe through Danish colonization. Due to the capital Masintulwa being predominantly culturally Danish, in the Masintulwa dialect, only the masculine and feminine gender markers are used, and only in the way you might see gender marking in other European languages (see e.g. English \textit{actor, husband, king} vs. \textit{actress, wife, queen}). However, in most non-urban areas of Nareland, and particularly among those striving to preserve Narish culture, it's still very common to see traditional Narish gender norms maintained. Gendered phatic expressions are prolific everywhere outside Masintulwa independent of other traditional practices.
+
+\section{Name determiners}
+
+When a name is used referentially (that is, pointing out a particular entity named that), the name must be preceded by a name determiner.
+
+The male and female determiners, \textit{ha} and \textit{fu} respectively, are derived from former personal pronouns that have now been replaced by demonstratives in other contexts. More recently, \textit{na} has been innovated as a gender-neutral alternative (this new \textit{na} being unrelated to the former first-person determiner). Some non-binary alternatives are emerging, but none have gained widespread traction as of writing.
+
+These determiners are only required when the name in question is serving a referential function, so they are not necessary when referring to the name itself as a concept (such as in `My name is ...' constructions) or in direct address.
+
+\pex
+\a
+ha \textsc{Karl}-la fu \textsc{Janne} \famwordold{i}{l}{aa}{f}{}.\\
+\textit{`Karl \& Janne are in love.'}
+\a
+bus \textsc{Isklijana} baj \famwordold{i}{m}{aa}{h}{}.\\
+\textit{`Their name is Karl.'}
+\a
+\textsc{Karl}, \famwordold{i}{w}{aa}{b}{ak}!\\
+\textit{`Karl, come back!'}
+\xe
+
+\begin{table}[ht]
+    \begin{tabular}{ll}
+        Feminine & fu \\
+        Masculine & ha \\
+        Nonbinary & daa, etc. \\
+        Agender, unspecified, or 
+    \end{tabular}
+\end{table}
+
+
+
+\part{Dictionary}
+
+\include{dictionary/dictionary}
+
+\part{Example Texts \& Translations}
+
+%\include{examples/example_texts}
+
+\end{document}
+
