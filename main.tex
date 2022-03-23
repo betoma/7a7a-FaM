@@ -24,7 +24,7 @@
 %-----CONFIGURATION------
 %------------------------
 
-\setmainfont{Charis SIL}
+\setmainfont{Noto Serif}
 % \setCJKmainfont[BoldFont=NotoSansCJKjp-Bold,AutoFakeSlant=0.15]{Noto Sans CJK JP}
 % \setCJKsansfont[BoldFont=NotoSansCJKjp-Bold,AutoFakeSlant=0.15]{Noto Sans CJK JP}
 \restylefloat{table}
@@ -32,7 +32,7 @@
 \setsecnumdepth{subsubsection}
 \settocdepth{subsubsection}
 
-\definelingstyle{default}{glstyle=nlevel,numoffset=3em,textoffset=1.5em,exskip=.75ex,belowglpreambleskip=.25ex,aboveglftskip=.25ex,everyglft=\it}
+\definelingstyle{default}{glstyle=nlevel,numoffset=3em,textoffset=1.5em,exskip=.75ex,interpartskip=3ex,belowglpreambleskip=.25ex,aboveglftskip=.25ex,everyglft=\it}
 \definelingstyle{Conversation}{aboveexskip=0pt,belowexskip=0pt,belowglpreambleskip=.5ex,aboveglftskip=0pt,glwordalign=left,glftpos=right,glhangstyle=none,
 glrightskip=0pt plus .3\hsize,% added to avoid overfull glosses
 glneveryline={\it\addfontfeatures{Letters=UppercaseSmallCaps}},%
@@ -191,6 +191,25 @@ everyglft={},%
     \label{tab:consinv}
 \end{table}
 
+\lang[] distinguishes 6 places of articulationa and 5-6 manners of articulation.
+
+Plosives are separated into fortis and lenis, where fortis plosives are unvoiced and strongly aspirated or affricated, and lenis are unaspirated and often voiced.
+
+Three fricative phonemes have been identified, one labial, one coronal, and one dorsal. The dorsal fricative can be realized as anywhere from glottal to palatal.
+
+The approximants /j w/ tend to be syllabic when not adjacent to a vowel, realized as [ɪ ʊ]. This process is related to that of epenthetic schwa insertion and occurs in the same environments. 
+% Instead of inserting an epenthetic schwa and having the approximants glide off to that vowel quality, the schwa merges with the approximant to create `colored' reduced monophthongs. 
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{lll}
+        \famword{JaMJ} `season' & /jamj/ & [ˈjamɪ] \\
+        \famword{KLaTW} `swamp, bog' & /kʰlatʰw/ & [ˈkʰlatʰʊ] \\
+        \famword{WSiiN} `bring about' & /wsi\longv{}n/ & [ʊˈsi\longv{}n] \\
+        \famword{JPaNia} `Japan' & /jpʰania/ & [ɪˈpʰania] 
+    \end{tabular}
+\end{table}
+
 \section{Vowels}
 
 \begin{table}[ht]
@@ -267,6 +286,8 @@ The informal writing conventions, also known as ``texting script", is the orthog
 \section{Roots}
 
 The majority of lexical items are produced by applying morphological operation belonging to their respective morphological categories to abstract roots. These roots take the form of two \emph{radicals,} where each radical constitutes a non-zero number of consonants. 
+
+Roots do not appear in isolation, and always combine with a pattern to form words.
 
 There are several fossilized derivations within the roots whose meanings have been lost, and as such form discrete roots altogether. Compare \famword{L-S} \emph{`travel by foot'} and \famword{PL-S} \emph{`travel, habitation'}, or \famword{N-W} \emph{`death, murder'} and \famword{N-WK} \emph{`sacrifice, martyrdom'}.
 
@@ -464,11 +485,110 @@ Verbs in \lang{} are highly inflected and very versatile
 
 % Have sections here explaining each pattern
 
+\subsection{\rootpart{}ii\rootpart{} - Transitive verb}
+
+Transitive verbs take two arguments, one agentive and one patientive, and describe actions performed by the agent unto the patient. 
+
+\subsection{\rootpart{}iya\rootpart{} - Unaccusative verb}
+
+Unaccusative verbs are intransitive verbs formed using the \rootpart{}iya\rootpart{} pattern. They take a patientive argument.
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{ll}
+        \famword{CiyaMP} & to bounce \\
+        \famword{DiyaL} & to be noticed, appear \\
+        \famword{FiyaL} & to get distracted \\
+        \famword{HiyaR} & to burn \\
+        \famword{KiyaW} & to grow \\
+    \end{tabular}
+    \caption{Examples of Unaccusative verbs}
+\end{table}
+
+A prototypical Unaccusative verb has one participant (or group of participants) who does not have control over the action or event; instead an external actor or force acts upon the participant without any explicit or implicit consent. For example, the verb \textit{\famword{CiyaMP}} `to bounce' refers to something or someone bouncing off a surface due to being thrown or dropped, not because it throws itself or jumps on its own. 
+
+\subsection{i\rootpart{}aa\rootpart{} - Unergative verb}
+
+Unergative verbs are intransitive verbs formed using the i\rootpart{}aa\rootpart{}. They take an agentive argument.
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{ll}
+        \famword{iBaaRB} & to leave and return shortly \\
+        \famword{iFaaL} & to stay alert \\
+        \famword{iYaaN} & to relax \\
+        \famword{iSaaFR} & to cook food \\
+        \famword{iTaaT} & to participate \\
+    \end{tabular}
+    \caption{Examples of Unergative verbs}
+\end{table}
+
+A prototypical Unergative verb has one participant (or group of participants) who is performing an action of their own volition. The action can either involve the participant acting without influencing anyone else, e.g. \textit{\famword{iCaaJ}} `to hurry', or involve an implicit object or person, e.g. \textit{\famword{iKaaJ}} `to write'. 
+
+\subsection{{\rootpart$_1$}i{\rootpart$_1$}iya{\rootpart$_2$} - Causative of unaccusative}
+
+Unaccusative causative verbs are valency-increasing stems that derive their meaning from Unaccusative verbs. They take two arguments, an agentive causer who brings about the Unaccusative events that affect the original argument, now causee.
+
+\subsection{aa\rootpart{}i\rootpart{} - Causative of unergative}
+
+Unergatvie causative verbs are valency-increasing stems that derive their meaning from Unergative verbs. Like Unaccusative causative verbs, they introduce a causer with higher agency than the original arguments of the Unergative verbs.
+
 \section{Verbal suffixes}
 
 % Have sections here explaining each suffix
 
-\section{Animacy hierarchy}
+\subsection{-uru - `to be'}
+
+The suffix \textit{-uru} derives copulative verbs from nominal or adjectival phrases. These convey the meaning of `to be X', and describe a given referent's state or characteristics. It behaves like a clitic, attaching to the entire phrase.
+
+\pex
+\a\begingl
+\famword{PurLi}[apple]@
+-uru[-\textsc{be}]
+\glft `It's an apple.'
+\endgl
+\a\begingl
+bus[\textsc{dem}]
+\famword{MaLa}[ill]@
+-uru[-\textsc{be}]
+\glft `They're ill.'
+\endgl
+\a\begingl
+pars[\textsc{dem}]
+\famword{MaNTa}[big]
+\famword{BuRKu}[dog]@
+-uru[-\textsc{be}]
+te[\textsc{atl}]
+\glft `It was a big dog!'
+\endgl
+\a\begingl
+\famword{\textrm{K}YIV-PLaS}[Kyiv]
+\famword{WKRaNia}[the\_Ukraine]
+fit[in]@
+-uru[-\textsc{be}]
+\glft `Kyiv is in the Ukraine.'
+\endgl
+\xe
+
+\subsection{-ila - `to exist'}
+
+The suffix \textit{-ila} derives existential verbs from nominal phrases. These predominantly convey the meaning of `there is X'. 
+
+\subsection{-iri - `to make'}
+
+The suffix \textit{-iri} derives verbs from nominal phrases describing the production of a particular thing.
+
+\subsection{-ari - `to become, to cause to be'}
+
+The suffix \textit{-ari} is a causative suffix.
+
+\subsection{-inala - `to make X-er, to increase'}
+
+The suffix \textit{-inala} 
+
+\section{Animacy hierarchy and direct-inverse}
+
+Unlike most languages, \lang{} makes use of neither case marking nor word order to indicate syntactic relationships in transitive sentences. Instead, the roles of the participants are decided based on their relative degree of animacy, where the more animate participant is considered the `subject' and the other the `object'. 
 
 \begin{table}[ht]
     \centering
@@ -478,15 +598,48 @@ Verbs in \lang{} are highly inflected and very versatile
     2 & Speakers of \lang{} \\
     3 & Non-speakers of \lang{} \\
     4 & Higher-order animals (mammals, octopus, intelligent creatures) \\
-    5 & \parbox[t]{7cm}{Body parts, tools, any inanimate object used for acting upon something} \\
+    5 & Body parts, tools, any inanimate object used for acting upon something \\
     6 & Lower-order animals (insects, mollusks, fish, worms, etc.) \\
-    7 & Plants \\
+    7 & Plants, fungi, amoeba, etc. \\
     8 & Inanimate objects \\
     9 & Abstract concepts 
     \end{tabular}
     \caption{Animacy hierarchy in nominals}
     \label{tab:hierarchy}
 \end{table}
+
+If the object outranks the subject in animacy, then this must be marked with the \textit{-ibi} suffix on the verb.
+
+\pex
+\a\begingl
+\glpreamble
+\famword{nas CuSu FiiL.}
+\endpreamble
+nas[\textsc{1s}]
+\famword{CuSu}[cat]
+\famword{FiiL}[notice]
+\glft `(as for me,) I saw the cat.'
+\endgl
+\a\begingl
+\glpreamble
+\famword{CuSu nas FiiL.}
+\endpreamble
+\famword{CuSu}[cat]
+nas[\textsc{1s}]
+\famword{FiiL}[notice]
+\glft `As for the cat, I saw it.'
+\endgl
+\a\begingl
+\glpreamble
+\famword{CuSu nas FiiLibi.}
+\endpreamble
+\famword{Cusu}[cat]
+nas[\textsc{1s}]
+\famword{FiiL}[notice]@
+-ibi[\textsc{-inv}]
+\glft `As for the cat, it saw me.'
+\endgl
+\xe
 
 \section{Verb stacking and connective verbs}
 
@@ -571,7 +724,7 @@ naswi[\textsc{1p.ex}]
 
 In high-valency clauses, \emph{kun} becomes more pertinent. The most agentive argument (subject) is considered to be the head of the phrase, but may still be marked for emphasis.
 
-\pex[interpartskip=3ex]
+\pex
 \a
 \begingl
 (kun)[\textsc{rel}]
@@ -774,7 +927,7 @@ Insert stuff about causatives and directness here.
 
 from-comparative, marks standard (to which is compared)
 
-\pex[interpartskip=3ex]
+\pex
 \a
 \begingl
 \famword{PuMu}[rabbit]
@@ -800,18 +953,88 @@ fun[\textsc{mrk}/from]
 
 The category of \textit{nominal} here refers to nouns, demonstrative and personal pronouns, and adjectives including numerals.
 
-Nouns in \lang{}, in contrast with verbs, are not inflected or even encoded for any grammatical features. Not even number is marked morphologically, instead all mentions of quantity are expressed periphrastically with adjectives. There are many productive derivational suffixes.
+Nouns in \lang{}, in contrast with verbs, are grammatically very simple and have no inflection or agreement for any grammatical category, not even number. There are many times more nominal patterns covering different semantic categories.
 
-\section{Nominal pattern}
+\section{Nominal patterns}
 
 % Have sections here explaining each pattern
+
+\subsection{\rootpart{}a\rootpart{} - Abstract noun}
+
+The Abstract noun pattern derives nouns with no physical referent, that is to say concepts and thoughts as opposed to corporeal entities or locations.
+
+\subsection{\rootpart{}a\rootpart{}a - Attributive quality}
+
+The Attributive pattern derives adjectives usually based on the most prominent characteristic or quality of a referent.
+
+\subsection{u\rootpart{}i\rootpart{}i - Experential quality}
+
+The Experiential pattern derives adjectives usually based on emotions and other internal impressions, e.g. hunger or the feeling of being useful.
+
+\subsection{\rootpart{}ana\rootpart{} - Person}
+
+The Person pattern derives nouns describing people or people-like referents.
+
+\subsection{\rootpart{}ur\rootpart{}i - Object}
+
+\subsection{\rootpart{}ar\rootpart{}i - Liquid}
+
+\subsection{i\rootpart{}u\rootpart{}a - Place}
+
+\subsection{m\rootpart{}i\rootpart{} - Tool or instrument}
+
+\subsection{in\rootpart{}i\rootpart{} - Diminutive}
+
+\subsection{\rootpart{}u\rootpart{}i - Color or visual impression}
+
+\subsection{\rootpart{}uli\rootpart{} - Body part}
+
+\subsection{\rootpart{}u\rootpart{}u - Animal}
+
+\subsection{\rootpart{}asi\rootpart{} - Long slender object}
+
+\subsection{\rootpart{}aju\rootpart{}a - Flat object or surface}
+
+\subsection{\rootpart{}idi\rootpart{} - Loose, granular mass}
+
+\subsection{a\rootpart{}i\rootpart{}u - Closed or natural container}
+
+\subsection{\rootpart{}imi\rootpart{}u - Open or unnatural container}
+
+\subsection{{\rootpart$_1$}a{\rootpart$_2$}jala{\rootpart$_2$} - Upper-body clothing}
+
+\subsection{us\rootpart{}a\rootpart{} - Lower-body clothing}
+
+\subsection{\rootpart{}u\rootpart{}aw - Direction}
+
+\subsection{\rootpart{}uu\rootpart{} - People group}
+
+\subsection{\rootpart{}a\rootpart{}ia - Nationstate}
 
 \section{Nominal suffixes}
 
 % Have sections here explaining each suffix
 
+\subsection{-se - `the ... one'}
+
+\subsection{-ana - Person}
+
+\subsection{-irjan - Maker}
+
+The suffix \textit{-irjan} is a shortening of the suffixes \textit{-iri + -ana}. 
+
+\subsection{-arjan - Causer of change}
+
+The suffix \textit{-arjan} is a shortening of the suffixes \textit{-ari + -ana}. 
+
+\subsection{-ini - Diminutive}
+
+\subsection{-lat - `measured in', `comprising'}
+
+\subsection{-aki - `made/comprised of'}
+
 \subsection{Gender}
-Certain nouns may be inflected to convey the social gender of its referent. In phatic expressions (\emph{-ara} phrases), gender marking is obligatory.
+Certain nouns may be derived to specific forms to convey the social gender of their referents. In phatic expressions (\emph{-ara} phrases), these gender suffixes are obligatory.
 
 \begin{table}[ht]
     \centering
@@ -819,7 +1042,7 @@ Certain nouns may be inflected to convey the social gender of its referent. In p
     -un, -en, -um, -ine & Feminine gender \\
     -aj, -aa, -iy, -a & Masculine gender \\
     -uj, -aw & Explicitly non-binary \\
-    -an, -en (-\null) & Gender-neutral, agender \\
+    -an, -en (-Ø) & Gender-neutral, agender \\
     \end{tabular}
     \caption{Common gender markers}
 \end{table}
