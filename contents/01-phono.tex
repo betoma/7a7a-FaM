@@ -1,0 +1,111 @@
+\chapter{Phonology}
+
+\section{Phonemes \& Allophony}
+
+\subsection{Consonant Inventory}
+
+\lang{} distinguishes maximally 6 places of articulation and 6 manners of articulation. There is a fortis-lenis distinction among stops only. Fortis stops are realized as either a voiceless affricate or aspirated plosive depending on the speaker and their background. Lenis stops may be realized as either voiced or voiceless depending on context, but are never aspirated or affricated. Fricatives have no voicing distinction and are prototypically voiceless. Both lenis stops and fricatives distinguish only three places of articulation, with the glottal stop and a generic dorsal fricative respectively replacing the three-way distinction between palatal, velar, and uvular fortis stops.
+
+\begin{table}[htb]
+    \centering
+\begin{tblr}{colspec={rcccccc},hline{1,Z}={2pt},hline{2}={1pt},vline{2}={2-7}{dashed}}
+    & Labial & Alveolar & Palatal & Velar & Uvular & Glottal \\
+    Fortis Stop & pʰ \ttilde{} p\tiebar ɸ & tʰ \ttilde{} t\tiebar s & c \ttilde{} c\tiebar ç & k \ttilde{} k\tiebar x & q \ttilde{} q\tiebar χ \\
+    Lenis Stop & p \ttilde{} b & t \ttilde{} d & & & & ʔ\\
+    Fricative & f & s & \SetCell[c=4]{c} ç \enspace \ttilde{} \enspace x \enspace \ttilde{} \enspace χ \enspace \ttilde{} \enspace ħ \enspace \ttilde{} \enspace h\\
+    Nasal & m & n\\
+    Rhotic & & \SetCell[c=2]{c} ɾ \enspace \ttilde{} \enspace ɹ \enspace \ttilde{} \enspace ɻ \\
+    Approximant & w & l & j\\
+\end{tblr}
+\caption{\lang{} Consonant Inventory}
+\label{tab:cons-inv}
+\end{table}
+
+ While nasal stops in \lang{} can vary considerably in their phonetic realization, phonemically only two places of articulation are distinguished: labial and alveolar. There is a single coronal rhotic phoneme, with its precise realization varying significantly depending on context, dialect, and speaker background. The realization recognized as most protoypical is probably the alveolar tap, but several dialects\todo{Which dialects produce as an approximant?} realize this phone as a coronal approximant instead, with its specific place of articulation varying based on context. The most Danish-influenced speakers often completely mimic the Danish uvular rhotic, with or without the typically Danish syllable-final vocalization, but this is considered non-standard. All these realizations contrast with the non-rhotic alveolar approximant /l/ across all known dialects. 
+ 
+ Additionally, \lang{} possesses two phonemic glides, which are generally analyzed as consonants despite varying phonetic realizations. \todo[inline]{Hint at their syllabic behavior here without giving it all away.}
+
+\subsection{Vowels}
+
+\begin{table}[htb]
+    \centering
+    \begin{tblr}{colspec={rccc},hline{1,Z}={2pt},hline{2}={1pt},vline{2}={2-7}{dashed}}
+          & Front & Central & Back \\
+    Close & i\>i\longv{} & & u\>u\longv \\
+    Mid   & & ə & \\
+    Open  & & a\>a\longv & \\
+    \end{tblr}
+    \caption{\lang{} Vowel Inventory}
+    \label{tab:vowel-inv}
+\end{table}
+
+\todo[inline]{Write some stuff about the vowels and how they're actually realized}
+
+\subsubsection{High vowel lowering}
+
+The high vowels /i i\longv{} u u\longv/ are lowered to [e e\longv{} o o\longv{}] before /j w/ respectively.
+
+\section{Phonotactics}
+
+Syllables always contain a vowel nucleus, with rarely more than two onset consonants and two coda consonants. Sonority hierarchy plays a big role in the structure of syllables and their realization.
+
+\todo[inline]{Rewrite this not to sound stupid}
+
+\subsection{Sonority Hierarchy}
+
+\todo[inline]{Finally figure this out together and make a nice graph}
+
+\subsection{Epenthetic schwa}
+
+The epenthetic schwa appears within consonant sequences that, without adjacent vowels, violate syllable structure and may not be realized. It occurs in the earliest non-initial position possible that provides legal consonant sequences. This schwa is never stressed. For example, the word \famword{NurRKi} is phonemically /ˈnurrkʰi/, but \lang{} does not allow duplicate continuant phonemes, leaving the second /r/ out of the first syllable. The following syllable would not be able to accommodate it either, as it would violate the sonority rules by placing a less sonorous phoneme between two more sonorous ones. Of the two positions for the epenthetic schwa within this sequence, [ˈnuɾəɾkʰi] and [ˈnuɾɾəkʰi], only the former solution accommodates both restrictions and yields a legal realization.
+
+% \begin{table}[ht]
+%     \begin{tabular}{lll}
+%         \textit{Example}    & \textit{Phonemic transcription}   & \textit{Phonetic Realization} \\
+%         \famword{NurRKi}    & /ˈnurrkʰi/                        & [ˈnuɾəɾkʰi] \\
+%         \famword{mBiT}      & /ˈmpitʰ/                          & [məˈbitʰ] \\
+%         \famword{inNiM}     & /inˈnim/                          & [inəˈnim] \\
+%         \famword{SaFR}      & /ˈsafr/                           & [ˈsafər] 
+%     \end{tabular}
+% \end{table}
+
+Word-onset sequences may never be disambiguated by prefixing an epenthetic schwa to the word. Like in medial and coda sequences, the epenthetic schwa must occur interconsonantally, but not across word boundaries. In the sequence |...C$_a$\#C$_x$C$_y$V...|, where C$_a$ is a consonant in the preceding word and C$_x$C$_y$ is an illegal sequence, the epenthetic schwa may not attempt to separate C$_a$ and C$_x$ in any way, and must instead separate C$_x$ and C$_y$. Word boundaries are inherently segmenting and preclude other segmenting elements like the epenthetic schwa. However, compound words are considered to be one phonological word, and in lacking a word boundary must make use of the epenthetic schwa.
+
+The approximants /j w/ tend to be syllabic when not adjacent to a vowel, realized as [ɪ ʊ]. This process is related to that of epenthetic schwa insertion and occurs in the same environments. 
+% Instead of inserting an epenthetic schwa and having the approximants glide off to that vowel quality, the schwa merges with the approximant to create `colored' reduced monophthongs. 
+% examples 1 & 2 are across 7a7a-FaM, but examples 3 & 4 are regional and sometimes insert schwas instead.
+
+\begin{center}
+    \begin{tblr}{lll}
+        \famword{JaMJ} `season' & /jamj/ & [ˈjamɪ] \\
+        \famword{KLaTW} `swamp, bog' & /kʰlatʰw/ & [ˈkʰlatʰʊ] \\
+        \famword{WSiiN} `bring about' & /wsi\longv{}n/ & [ʊˈsi\longv{}n] \\
+        \famword{JPaNia} `Japan' & /jpʰania/ & [ɪˈpʰania] 
+    \end{tblr}
+\end{center}
+
+\section{Stress}
+
+Stress, in the form of elevated pitch and volume, is placed on the first non-schwa vowel of the word, after the first root radical, on a long vowel immediately preceding the first radical, or on certain morphemes that carry stress.
+
+% \begin{table}[ht]
+%     %\centering
+%     \begin{tabular}{lll}
+%         nemiwi & [nəˈmiwi] & first non-schwa vowel of word\\
+%         parse & [ˈparsə] & first non-schwa vowel of word\\
+%         \famword{iFaaM} & [iˈfa{\longv}m] & vowel after first radical\\
+%         \famword{FanaS} & [ˈfanas] & vowel after first radical\\
+%         \famword{aaNiW}& [ˈa{\longv}niw] & long vowel preceding radical\\
+%         \famword{iLaaSak} & [iˌla{\longv}ˈsak] & presence of stress-carrying morpheme (imperative affix \emph{-ak})
+%     \end{tabular}
+% \end{table}
+
+\todo[inline]{Elaborate on this; also what about rootless words?}
+
+\section{Orthography}
+
+\todo[inline]{Elaborate on this and add some pseudo-history about the orthography}
+
+The formal writing conventions make use of small-caps letterforms to highlight roots. In addition, it uses the glottal stop character to indicate the glottal stop phoneme, using the capital glottal stop character \sqbrack{\bigglot} when the glottal stop is part of a root radical (for instance, in the word \textit{\bigglot a\bigglot a}) and the lowercase glottal stop character \sqbrack{\lilglot} otherwise (such as in the suffix \textit{-(e)}\lilglot).
+
+The informal writing conventions, also known as ``texting script", is the orthography used in the majority of day-to-day communication. Rather than using small-caps letterforms, it uses true capital letters for roots. It also uses \sqbrack{7} for the glottal stop, with no difference between capital and lowercase. While these differences could be considered less aesthetically pleasing, they result in an ASCII-compatible script, which makes this writing style far easier to use in most messaging apps and computer interfaces. Texting-style \lang{} also allows for several shorthand abbreviations that tend not to be used in more formal style.\todo{Rewrite this paragraph to sound less stilted; maybe put in a cool colored box}

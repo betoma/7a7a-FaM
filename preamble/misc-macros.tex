@@ -1,0 +1,32 @@
+%-------COMMANDS---------
+%------------------------
+
+\newcommand{\lang}{{\bigglot}a{\bigglot}a-\textsc{f}a\textsc{m}}
+\newcommand{\longv}{ː}
+\newcommand{\sqbrack}[1]{$\langle$#1$\rangle$}
+\newcommand{\phipa}[1]{/#1/}
+\newcommand{\bripa}[1]{[#1]}
+\newcommand{\ttilde}{\raise.17ex\hbox{$\scriptstyle\sim$}}
+\newcommand{\rootpart}{$\Theta$}
+\newcommand{\glotstop}{ʔ}
+\newcommand{\bigglot}{Ɂ}
+\newcommand{\lilglot}{ɂ}
+\newcommand{\nm}{\symbol{"2205}}
+\newcommand{\tiebar}{͡}
+\newcommand{\famwordold}[5]{#1\textsc{#2}#3\textsc{#4}#5}
+\newcommand\famword[1]{{\addfontfeatures{Letters=UppercaseSmallCaps}#1}}
+\newcommand{\famq}[1]{»#1«}
+
+%----QoL COMMAND-------
+%----------------------
+
+\newcounter{numbertable}
+
+\newcommand{\wtf}[1]{\thenumbertable. & #1 \\\refstepcounter{numbertable} }
+
+
+%-----description command---%
+%---------------------------%
+
+\SetLabelAlign{parrightcent}{\strut\smash{\parbox[c]{\labelwidth}{\raggedleft#1}}}
+\SetLabelAlign{parright}{\strut\smash{\parbox[t]{\labelwidth}{\raggedleft#1}}}

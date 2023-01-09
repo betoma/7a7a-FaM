@@ -1,0 +1,48 @@
+%-----DICT COMMANDS------
+%------------------------
+
+\makeatletter
+\@beginparpenalty=10000
+\makeatother
+
+\newcounter{dictwordcount}
+\newcounter{definition}
+
+\newenvironment{dictroot}[2]%
+    {%
+    \subsection{\uppercase{#1---#2}}
+    \begin{description}[leftmargin=*,labelwidth=*]
+    }{%
+    \end{description}
+    }%
+
+\newcommand{\dictsubtitle}[1]{%
+    \end{description}
+    \subsubsection*{#1}
+    \begin{description}[leftmargin=*,labelwidth=*]
+}%
+
+\makeatletter
+\newenvironment{dictentry}[2]%
+    {%
+    \item[\famword{#1}] $\bullet$ \textit{#2}\hfill
+    \protected@edef\@currentlabelname{#1}%
+    \setcounter{definition}{0}%
+    \refstepcounter{dictwordcount}%
+    \begin{description}[align=right,labelwidth=*,font=\normalfont]
+    }{%
+    \end{description}
+    }%
+\makeatother
+
+\newcommand{\dictdef}[1]{\refstepcounter{definition}%
+\item[\thedefinition.] #1
+}%
+
+\WithSuffix\newcommand\dictdef*[1]{%
+    \item[] #1
+}
+
+\newcommand{\newentry}[2]{%
+\item[#1] $\bullet$ \textit{#2}\hfill
+}%

@@ -1,0 +1,22 @@
+%----------------------------
+%---------Glossaries---------
+%----------------------------
+
+\makenoidxglossaries
+
+\newleipzig{inv}{inv}{inverse}
+
+\glssetwidest{CABBA}
+
+\makeatletter
+\newglossarystyle{fixed-mcols}{%
+    \setglossarystyle{alttree}%
+    \renewenvironment{theglossary}%
+    {%
+        \begin{multicols}{3}%
+            \def\@gls@prevlevel{-1}%
+%           \mbox{}\par
+        }%
+        {\par\end{multicols}}%
+}
+\makeatother

@@ -1,3 +1,6 @@
+# specific folder
+examples/challenges
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
